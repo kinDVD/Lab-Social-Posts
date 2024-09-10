@@ -1,5 +1,8 @@
-<p>social-posts works!</p>
-@for (p of posts; track $index) {
-    <app-single-post [SinglePost] ="p"></app-single-post>
+<h1>Garnd Scrucis Social Network</h1>
+<button (click)="toggleDisplay()" >ADD A THOUGHT</button>
+@if(newThought == true){
+<app-post-form (Submitted)="onSubmit($event)"></app-post-form>
 }
-<app-post-form (Submitted)="onSubmit($event)">SUBMIT</app-post-form>
+@for (p of posts; track $index) {
+    <app-single-post (Deleted)="DeletePost($event)" [SinglePost]="p">X</app-single-post>
+}

@@ -1,7 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Post } from '../../models/post';
-import { PostFormComponent } from '../post-form/post-form.component';
-import { SocialPostsComponent } from '../social-posts/social-posts.component';
 
 @Component({
   selector: 'app-single-post',
@@ -12,4 +10,10 @@ import { SocialPostsComponent } from '../social-posts/social-posts.component';
 })
 export class SinglePostComponent {
   @Input() SinglePost: Post = {} as Post;
+  @Output() Deleted = new EventEmitter<Post>();
+  
+  EmitDelete(){
+    this.Deleted.emit(this.SinglePost);
+  }
+
 }

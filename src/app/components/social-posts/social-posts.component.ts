@@ -11,6 +11,7 @@ import { SinglePostComponent } from '../single-post/single-post.component';
   styleUrl: './social-posts.component.css'
 })
 export class SocialPostsComponent {
+  newThought: boolean = false;
   posts: Post [] = [
     {
       title: "First Post",
@@ -22,5 +23,14 @@ export class SocialPostsComponent {
     this.posts.unshift(p);
   }
 
-  toggleDisplay()
+  toggleDisplay(){
+    this.newThought = !this.newThought;
+  }
+
+  DeletePost(i:Post){
+    let index: number = this.posts.findIndex(x => x === i);
+    this.posts.splice(index, 1);
+  }
+
+
 }
