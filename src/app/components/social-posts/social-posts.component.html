@@ -1,0 +1,5 @@
+<p>social-posts works!</p>
+@for (p of posts; track $index) {
+    <app-single-post [SinglePost] ="p"></app-single-post>
+}
+<button (click)="onSubmit()" >SUBMIT</button>
