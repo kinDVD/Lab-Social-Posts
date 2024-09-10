@@ -1,1 +1,6 @@
 <p>post-form works!</p>
+
+<p>Enter a New Thought</p>
+<input placeholder="Title" name="Title" type="text" [(ngModel)]="newPost.title" />
+<input placeholder="Thought" name="Thought" type="text" [(ngModel)]="newPost.thought" />
+<button (click)="submitPost()" >Submit</button>

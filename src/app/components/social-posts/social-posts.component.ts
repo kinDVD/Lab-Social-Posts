@@ -17,12 +17,10 @@ export class SocialPostsComponent {
       thought: "Hello World!"
     }
   ];
-  @Input() DisplayPost: Post = {} as Post;
-  @Output() Submit = new EventEmitter<Post>();
 
-  onSubmit():void{
-    let newPost: Post = { ...this.DisplayPost};
-    this.Submit.emit(newPost);
-    this.DisplayPost = {} as Post;
+  onSubmit(p:Post):void{
+    this.posts.unshift(p);
   }
+
+  toggleDisplay()
 }

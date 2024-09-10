@@ -1,20 +1,22 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { Post } from '../../models/post';
 
 @Component({
   selector: 'app-post-form',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './post-form.component.html',
   styleUrl: './post-form.component.css'
 })
 export class PostFormComponent {
   displayForm: boolean = false;
-  @Output () Submit = new EventEmitter<Post>();
+  @Output () Submitted = new EventEmitter<Post>();
+  newPost: Post = {} as Post;
 
-  emitForm():void{
-    let newPost: Post = { ...this.FormItem};
-    this.ItemCreated.emit(newItem);
-    this.FormItem = {} as Item;
+  submitPost():void{
+    let post: Post = { ...this.newPost};
+    this.Submitted.emit(post);
+    this.newPost = {} as Post;
   }
 }
