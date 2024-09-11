@@ -20,4 +20,7 @@ describe('SocialPostsComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+
+  
 });

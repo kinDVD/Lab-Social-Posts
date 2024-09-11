@@ -1,0 +1,7 @@
+.poke-ball-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 47px;
+    justify-content: center;
+  }
+  

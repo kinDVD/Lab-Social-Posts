@@ -1,5 +1,13 @@
-<div class="container">
-<h3>{{SinglePost.title}}</h3>
-<p>{{SinglePost.thought}}</p>
-<button (click)="EmitDelete()">X</button>
-</div>
+<div class="poke-ball">
+    <div class="poke-ball__top"></div>
+    <div class="poke-ball__middle"></div>
+    <div class="poke-ball__bottom"></div>
+    <div class="poke-ball__button"></div>
+    
+    <div class="poke-ball__content">
+      <h3>{{SinglePost.title}}</h3>
+      <p>{{SinglePost.thought}}</p>
+      <button class="btn btn-outline-success" (click)="EmitDelete()">X</button>
+    </div>
+  </div>
+  

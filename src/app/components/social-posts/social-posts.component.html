@@ -1,8 +1,20 @@
-<h1>Garnd Scrucis Social Network</h1>
-<button (click)="toggleDisplay()" >ADD A THOUGHT</button>
-@if(newThought == true){
-<app-post-form (Submitted)="onSubmit($event)"></app-post-form>
-}
-@for (p of posts; track $index) {
-    <app-single-post (Deleted)="DeletePost($event)" [SinglePost]="p">X</app-single-post>
-}
+<div class="container-fluid">
+    <h1>POKE-Network</h1>
+    @if( newThought==false){
+      
+      <button class="btn btn-warning" data-bs-target="#pokeThoughtModal" (click)="toggleDisplay()">ADD A POKE-THOUGHT</button>
+    }
+    @else {
+      <button class="btn btn-danger" (click)="toggleDisplay()">CLOSE POKE-FORM</button>
+    }
+    @if(newThought == true){
+      <app-post-form (Submitted)="onSubmit($event)"></app-post-form>
+      }
+    
+    <div class="poke-ball-container">
+      @for (p of posts; track $index) {
+        <app-single-post  (Deleted)="DeletePost($event)" [SinglePost]="p">X</app-single-post>
+    }
+    </div>
+  </div>
+

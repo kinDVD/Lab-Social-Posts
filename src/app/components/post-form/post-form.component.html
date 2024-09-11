@@ -1,6 +1,10 @@
-<p>Enter a New Thought</p>
-<h4>Title Your Thought:</h4>
-<input placeholder="Title" name="Title" type="text" [(ngModel)]="newPost.title" />
-<h4>Enter a Thought:</h4>
-<input placeholder="Thought" name="Thought" type="text" [(ngModel)]="newPost.thought" />
-<button (click)="submitPost()" >Submit</button>
+<div class="container-fluid">
+<p>Write what's on your mind.</p>
+<p>Give that thought a POKE-name</p>
+<p>Capture your thought to see it later!</p>
+<h4>What are you thinking about?</h4>
+<input placeholder="Write down a thought" name="Thought" type="text" [(ngModel)]="newPost.thought" />
+<h4>Name that POKE-thought!</h4>
+<input placeholder="Name" name="Title" type="text" [(ngModel)]="newPost.title" />
+<button class="btn btn-outline-info" (click)="submitPost()" >CAPTURE!</button>
+</div>

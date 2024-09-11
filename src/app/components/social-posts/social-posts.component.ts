@@ -14,13 +14,14 @@ export class SocialPostsComponent {
   newThought: boolean = false;
   posts: Post [] = [
     {
-      title: "First Post",
-      thought: "Hello World!"
+      title: "TinaSnooze!",
+      thought: "I choose you!"
     }
   ];
 
   onSubmit(p:Post):void{
     this.posts.unshift(p);
+    this.toggleDisplay();
   }
 
   toggleDisplay(){
@@ -30,6 +31,9 @@ export class SocialPostsComponent {
   DeletePost(i:Post){
     let index: number = this.posts.findIndex(x => x === i);
     this.posts.splice(index, 1);
+  }
+  trackByIndex(index: number, item: Post): number {
+    return index;
   }
 
 
